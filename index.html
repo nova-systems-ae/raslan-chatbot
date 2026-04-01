@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raslan Building Contracting — Get Your Free Quote</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0E1628;--bg2:#121D33;--card:#182640;--card2:#1E3050;--blue:#4A90D9;--blue-light:#6CB0F0;--blue-soft:#3A7BC8;--blue-glow:rgba(74,144,217,0.12);--sky:#89BEF0;--gold:#D4A853;--cream:#F1F5F9;--white:#FFFFFF;--text:#E2E8F0;--text2:#94A3B8;--text3:#5A7090;--radius:16px;--radius-sm:10px}
+body{font-family:'Outfit','Noto Sans Arabic',sans-serif;background:var(--bg);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden;background-image:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(74,144,217,0.08),transparent),radial-gradient(ellipse 50% 40% at 80% 100%,rgba(137,190,240,0.04),transparent)}
+.phone{width:100%;max-width:440px;height:90vh;max-height:820px;background:var(--bg2);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 0 0 1px rgba(74,144,217,0.08),0 24px 80px rgba(0,0,0,0.5)}
+.hdr{padding:20px 20px 16px;display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,var(--bg2),rgba(18,29,51,0.95));border-bottom:1px solid rgba(74,144,217,0.08);z-index:10}
+.logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--blue-soft));display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px rgba(74,144,217,0.25),0 0 20px var(--blue-glow);flex-shrink:0}
+.logo span{font-family:'Playfair Display',serif;font-size:11px;font-weight:700;color:var(--white);letter-spacing:0.5px;text-align:center;line-height:1.1}
+.hdr-info{flex:1}.hdr-name{font-family:'Playfair Display',serif;color:var(--cream);font-size:16px;font-weight:600}
+.hdr-sub{color:var(--sky);font-size:12px;font-weight:500;margin-top:2px;display:flex;align-items:center;gap:6px}
+.hdr-dot{width:6px;height:6px;border-radius:50%;background:var(--sky);animation:glow 2.5s ease-in-out infinite}
+@keyframes glow{0%,100%{opacity:1;box-shadow:0 0 4px var(--sky)}50%{opacity:0.5;box-shadow:none}}
+.chat{flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:6px;scroll-behavior:smooth}
+.chat::-webkit-scrollbar{width:3px}.chat::-webkit-scrollbar-thumb{background:rgba(74,144,217,0.2);border-radius:4px}
+.msg{max-width:82%;padding:12px 16px;font-size:14.5px;line-height:1.6;color:var(--text);animation:si 0.4s cubic-bezier(0.16,1,0.3,1);word-wrap:break-word}
+.msg.rtl{direction:rtl;text-align:right;font-family:'Noto Sans Arabic','Outfit',sans-serif}
+@keyframes si{from{opacity:0;transform:translateY(12px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.msg.in{align-self:flex-start;background:var(--card);border-radius:2px var(--radius) var(--radius) var(--radius);border:1px solid rgba(74,144,217,0.06)}
+.msg.out{align-self:flex-end;background:linear-gradient(135deg,var(--blue),var(--blue-soft));border-radius:var(--radius) 2px var(--radius) var(--radius);color:var(--white)}
+.msg .time{font-size:10px;color:var(--text3);text-align:right;margin-top:6px}.msg.out .time{color:rgba(255,255,255,0.4)}
+.typing{display:flex;gap:5px;padding:14px 18px;align-self:flex-start;background:var(--card);border-radius:2px var(--radius) var(--radius) var(--radius);border:1px solid rgba(74,144,217,0.06);animation:si 0.3s cubic-bezier(0.16,1,0.3,1)}
+.td{width:6px;height:6px;border-radius:50%;background:var(--blue-light);animation:bn 1.4s infinite}.td:nth-child(2){animation-delay:.15s}.td:nth-child(3){animation-delay:.3s}
+@keyframes bn{0%,60%,100%{transform:translateY(0);opacity:0.4}30%{transform:translateY(-8px);opacity:1}}
+.opts{display:flex;flex-direction:column;gap:8px;max-width:85%;align-self:flex-start;animation:si 0.4s cubic-bezier(0.16,1,0.3,1)}.opts.rtl{direction:rtl}
+.opt{background:var(--card);border:1px solid rgba(74,144,217,0.12);color:var(--blue-light);padding:13px 18px;border-radius:var(--radius-sm);font-size:14.5px;font-family:'Outfit','Noto Sans Arabic',sans-serif;font-weight:500;cursor:pointer;transition:all 0.25s cubic-bezier(0.16,1,0.3,1);text-align:left;position:relative;overflow:hidden;display:flex;align-items:center;gap:10px}
+.opt.rtl{text-align:right;direction:rtl;font-family:'Noto Sans Arabic','Outfit',sans-serif;flex-direction:row-reverse}
+.opt::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--blue-glow),transparent);opacity:0;transition:opacity 0.25s}
+.opt:hover{border-color:var(--blue);color:var(--white);transform:translateY(-2px);box-shadow:0 4px 16px rgba(74,144,217,0.2)}.opt:hover::before{opacity:1}.opt:active{transform:translateY(0)}
+.opt-icon{font-size:18px;flex-shrink:0;z-index:1}.opt-text{z-index:1}
+.inarea{padding:12px 16px 16px;display:flex;align-items:center;gap:10px;background:var(--bg2);border-top:1px solid rgba(74,144,217,0.06)}
+.tinput{flex:1;background:var(--card);border:1px solid rgba(74,144,217,0.08);border-radius:12px;padding:12px 18px;color:var(--text);font-size:14.5px;font-family:'Outfit',sans-serif;outline:none;transition:border-color 0.2s}
+.tinput:focus{border-color:rgba(74,144,217,0.3)}.tinput::placeholder{color:var(--text3)}.tinput:disabled{opacity:0.3;cursor:not-allowed}
+.tinput.rtl{direction:rtl;text-align:right;font-family:'Noto Sans Arabic','Outfit',sans-serif}
+.sbtn{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--blue-soft));border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.25s;flex-shrink:0;box-shadow:0 2px 8px rgba(74,144,217,0.25)}
+.sbtn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(74,144,217,0.35)}.sbtn:disabled{opacity:0.3;cursor:not-allowed;transform:none;box-shadow:none}
+.sbtn svg{width:18px;height:18px;fill:var(--white)}
+.divider{text-align:center;margin:10px 0;animation:si 0.3s ease}.divider span{background:var(--card);color:var(--text3);font-size:11px;padding:5px 14px;border-radius:20px;border:1px solid rgba(74,144,217,0.04)}
+.done{background:linear-gradient(135deg,var(--card2),var(--card));border:1px solid rgba(74,144,217,0.12);border-radius:var(--radius);padding:24px;max-width:85%;align-self:flex-start;animation:si 0.5s cubic-bezier(0.16,1,0.3,1);position:relative;overflow:hidden}
+.done::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-light),var(--gold),var(--blue-light))}
+.done.rtl{direction:rtl;text-align:right}
+.done-icon{font-size:32px;margin-bottom:12px;display:block}
+.done h3{font-family:'Playfair Display',serif;color:var(--cream);font-size:18px;margin-bottom:10px;font-weight:600}
+.done p{color:var(--text2);font-size:13.5px;line-height:1.7}
+.done-contact{margin-top:16px;padding-top:14px;border-top:1px solid rgba(74,144,217,0.1)}
+.done-contact a{display:flex;align-items:center;gap:8px;color:var(--blue-light);font-size:13px;text-decoration:none;margin-bottom:8px;transition:color 0.2s}.done-contact a:hover{color:var(--white)}.done-contact a span{font-size:16px}
+.hero{max-width:85%;align-self:flex-start;animation:si 0.6s cubic-bezier(0.16,1,0.3,1);margin-bottom:4px}
+.hero-card{background:linear-gradient(135deg,var(--card2),var(--card));border:1px solid rgba(74,144,217,0.08);border-radius:var(--radius);padding:24px;position:relative;overflow:hidden}
+.hero-card::before{content:'';position:absolute;top:-50%;right:-30%;width:200px;height:200px;background:radial-gradient(circle,rgba(74,144,217,0.1),transparent 70%);border-radius:50%}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--blue-glow);border:1px solid rgba(74,144,217,0.15);padding:4px 12px;border-radius:20px;font-size:11px;color:var(--blue-light);font-weight:500;letter-spacing:0.5px;margin-bottom:14px}
+.hero-badge .dot{width:5px;height:5px;border-radius:50%;background:var(--blue-light)}
+.hero h2{font-family:'Playfair Display',serif;color:var(--cream);font-size:21px;font-weight:600;line-height:1.3;margin-bottom:8px}
+.hero h2 em{color:var(--gold);font-style:normal}
+.hero p{color:var(--text2);font-size:13.5px;line-height:1.6}
+.hero-contact{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(74,144,217,0.08);border:1px solid rgba(74,144,217,0.1);padding:4px 10px;border-radius:8px;font-size:11px;color:var(--sky);text-decoration:none;transition:all 0.2s}
+.hero-tag:hover{background:rgba(74,144,217,0.15);color:var(--white)}.hero-tag span{font-size:13px}
+@media(max-width:480px){body{padding:0;align-items:stretch}.phone{max-width:100%;height:100vh;max-height:100vh;border-radius:0}}
+</style>
+</head>
+<body>
+<div class="phone">
+<div class="hdr"><div class="logo"><span>RBC</span></div><div class="hdr-info"><div class="hdr-name">Raslan Building Contracting</div><div class="hdr-sub"><span class="hdr-dot"></span>Online — replies instantly</div></div></div>
+<div class="chat" id="chat"></div>
+<div class="inarea"><input type="text" class="tinput" id="ti" placeholder="Type your message..." disabled><button class="sbtn" id="sb" disabled><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div>
+</div>
+<script>
+const chat=document.getElementById('chat'),ti=document.getElementById('ti'),sb=document.getElementById('sb');
+const WEBHOOK_URL='https://hook.eu1.make.com/jgs59cio0c3voqofc002t1e2b9dsnyb1';
+const ld={name:'',phone:'',service:'',projectType:'',budget:'',timeline:'',location:'',language:'',timestamp:''};
+let step=0,lang='en';
+const C={en:{heroTitle:'Get a Free <em>Project Quote</em>',heroText:'Tell us about your project and our team will provide a detailed consultation within 24 hours.',langOpts:[{t:'English',i:'🇬🇧'},{t:'العربية',i:'🇦🇪'}],serviceAsk:"What service are you interested in?",services:[{t:'Villa Construction',i:'🏗️'},{t:'Interior Design & Fit-Out',i:'🎨'},{t:'House Renovation',i:'🔨'},{t:'Extension / Addition',i:'📐'},{t:'Flooring Installation',i:'🏠'},{t:'Full Project (Design + Build)',i:'✨'}],projectAsk:"What type of property is this for?",projects:[{t:'Private Villa',i:'🏡'},{t:'Apartment / Flat',i:'🏢'},{t:'Commercial Space',i:'🏬'},{t:'Office',i:'💼'}],budgetAsk:"What's your estimated budget range?",budgets:[{t:'Under AED 100,000',i:'💰'},{t:'AED 100,000 – 300,000',i:'💰'},{t:'AED 300,000 – 500,000',i:'💰'},{t:'AED 500,000 – 1,000,000',i:'💰'},{t:'AED 1,000,000+',i:'💰'},{t:'Not sure — need guidance',i:'🤔'}],timelineAsk:"When are you looking to start?",timelines:[{t:'Immediately',i:'⚡'},{t:'Within 1 month',i:'📅'},{t:'Within 3 months',i:'📆'},{t:'Just exploring options',i:'🔍'}],locationAsk:"Where is the project located?",locations:[{t:'Dubai',i:'📍'},{t:'Abu Dhabi',i:'📍'},{t:'Sharjah',i:'📍'},{t:'Other Emirates',i:'📍'}],nameAsk:"Excellent! What's your name so our project manager can reach you?",namePh:"Your full name...",phoneAsk:n=>`Thank you ${n}! What's the best number to contact you on?`,phonePh:"Your phone number...",summaryTitle:"Your project enquiry:",doneTitle:n=>`Thank you, ${n}!`,doneText:s=>`A Raslan project manager will contact you within 24 hours to discuss your ${s.toLowerCase()} project.`,labels:{s:'Service',p:'Property',b:'Budget',t:'Timeline',l:'Location',n:'Name',ph:'Phone'}},ar:{heroTitle:'احصل على <em>عرض سعر مجاني</em>',heroText:'أخبرنا عن مشروعك وسيقدم فريقنا استشارة مفصلة خلال ٢٤ ساعة.',langOpts:[{t:'English',i:'🇬🇧'},{t:'العربية',i:'🇦🇪'}],serviceAsk:"ما الخدمة التي تهتم بها؟",services:[{t:'بناء فلل',i:'🏗️'},{t:'تصميم داخلي وتشطيب',i:'🎨'},{t:'تجديد المنزل',i:'🔨'},{t:'توسعة / إضافة',i:'📐'},{t:'تركيب أرضيات',i:'🏠'},{t:'مشروع متكامل',i:'✨'}],projectAsk:"ما نوع العقار؟",projects:[{t:'فيلا خاصة',i:'🏡'},{t:'شقة',i:'🏢'},{t:'مساحة تجارية',i:'🏬'},{t:'مكتب',i:'💼'}],budgetAsk:"ما ميزانيتك التقريبية؟",budgets:[{t:'أقل من ١٠٠,٠٠٠ درهم',i:'💰'},{t:'١٠٠,٠٠٠ – ٣٠٠,٠٠٠ درهم',i:'💰'},{t:'٣٠٠,٠٠٠ – ٥٠٠,٠٠٠ درهم',i:'💰'},{t:'٥٠٠,٠٠٠ – ١,٠٠٠,٠٠٠ درهم',i:'💰'},{t:'أكثر من ١,٠٠٠,٠٠٠ درهم',i:'💰'},{t:'غير متأكد',i:'🤔'}],timelineAsk:"متى تريد البدء؟",timelines:[{t:'فوراً',i:'⚡'},{t:'خلال شهر',i:'📅'},{t:'خلال ٣ أشهر',i:'📆'},{t:'أستكشف الخيارات',i:'🔍'}],locationAsk:"أين موقع المشروع؟",locations:[{t:'دبي',i:'📍'},{t:'أبوظبي',i:'📍'},{t:'الشارقة',i:'📍'},{t:'إمارات أخرى',i:'📍'}],nameAsk:"ممتاز! ما اسمك حتى يتواصل معك مدير المشروع؟",namePh:"...اسمك الكامل",phoneAsk:n=>`شكراً ${n}! ما أفضل رقم للتواصل معك؟`,phonePh:"...رقم هاتفك",summaryTitle:"ملخص استفسارك:",doneTitle:n=>`!شكراً لك ${n}`,doneText:s=>`سيتواصل معك مدير مشروع من رسلان خلال ٢٤ ساعة لمناقشة مشروعك.`,labels:{s:'الخدمة',p:'نوع العقار',b:'الميزانية',t:'الجدول الزمني',l:'الموقع',n:'الاسم',ph:'الهاتف'}}};
+function gt(){return new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true})}
+function addDiv(){const d=document.createElement('div');d.className='divider';d.innerHTML=`<span>${new Date().toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}</span>`;chat.appendChild(d)}
+function addHero(){const h=document.createElement('div');h.className='hero';h.innerHTML=`<div class="hero-card"><div class="hero-badge"><span class="dot"></span>PROJECT CONSULTATION</div><h2>${C.en.heroTitle}</h2><p>${C.en.heroText}</p><div class="hero-contact"><a href="tel:+971551115333" class="hero-tag"><span>📞</span>+971 55 111 5333</a><a href="mailto:info@raslanbc.ae" class="hero-tag"><span>✉️</span>info@raslanbc.ae</a><a href="https://raslanbc.ae" target="_blank" class="hero-tag"><span>🌐</span>raslanbc.ae</a><a href="https://instagram.com/raslanbc" target="_blank" class="hero-tag"><span>📸</span>@raslanbc</a></div></div>`;chat.appendChild(h);ss()}
+function ai(t,r=false){const m=document.createElement('div');m.className=`msg in${r?' rtl':''}`;m.innerHTML=`${t}<div class="time">${gt()}</div>`;chat.appendChild(m);ss()}
+function ao(t,r=false){const m=document.createElement('div');m.className=`msg out${r?' rtl':''}`;m.innerHTML=`${t}<div class="time">${gt()}</div>`;chat.appendChild(m);ss()}
+function st(){const t=document.createElement('div');t.className='typing';t.id='typ';t.innerHTML='<div class="td"></div><div class="td"></div><div class="td"></div>';chat.appendChild(t);ss()}
+function rt(){const e=document.getElementById('typ');if(e)e.remove()}
+function so(opts,r=false){const c=document.createElement('div');c.className=`opts${r?' rtl':''}`;c.id='co';opts.forEach(o=>{const b=document.createElement('button');b.className=`opt${r?' rtl':''}`;b.innerHTML=`<span class="opt-icon">${o.i||''}</span><span class="opt-text">${o.t}</span>`;b.addEventListener('click',()=>hc(o.t));c.appendChild(b)});chat.appendChild(c);ss()}
+function ro(){const e=document.getElementById('co');if(e)e.remove()}
+function ei(p,r=false){ti.disabled=false;sb.disabled=false;ti.placeholder=p||'Type...';if(r)ti.classList.add('rtl');else ti.classList.remove('rtl');setTimeout(()=>ti.focus(),100)}
+function di(){ti.disabled=true;sb.disabled=true;ti.classList.remove('rtl')}
+function ss(){setTimeout(()=>{chat.scrollTop=chat.scrollHeight},60)}
+function br(t,d=1200,r=false){return new Promise(res=>{st();setTimeout(()=>{rt();ai(t,r);res()},d)})}
+function showDone(){const r=lang==='ar';const t=C[lang];const c=document.createElement('div');c.className=`done${r?' rtl':''}`;c.innerHTML=`<span class="done-icon">🏗️</span><h3>${t.doneTitle(ld.name)}</h3><p>${t.doneText(ld.service)}</p><div class="done-contact"><a href="tel:+971551115333"><span>📞</span>+971 55 111 5333</a><a href="mailto:info@raslanbc.ae"><span>✉️</span>info@raslanbc.ae</a><a href="https://raslanbc.ae" target="_blank"><span>🌐</span>raslanbc.ae</a><a href="https://maps.google.com/?q=Gold+Souk+Deira+Dubai" target="_blank"><span>📍</span>Gold Souk, Deira, Dubai, UAE</a></div>`;chat.appendChild(c);ss()}
+async function sendWebhook(){ld.timestamp=new Date().toISOString();ld.language=lang==='ar'?'Arabic':'English';try{await fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(ld)})}catch(e){console.log('Demo:',ld)}}
+async function hc(o){ro();const r=lang==='ar';ao(o,r);switch(step){case 0:if(o==='العربية')lang='ar';else lang='en';const t2=C[lang];const r2=lang==='ar';step=1;await br(t2.serviceAsk,1000,r2);so(t2.services,r2);break;case 1:ld.service=o;step=2;await br(C[lang].projectAsk,1000,r);so(C[lang].projects,r);break;case 2:ld.projectType=o;step=3;await br(C[lang].budgetAsk,1000,r);so(C[lang].budgets,r);break;case 3:ld.budget=o;step=4;await br(C[lang].timelineAsk,1000,r);so(C[lang].timelines,r);break;case 4:ld.timeline=o;step=5;await br(C[lang].locationAsk,1000,r);so(C[lang].locations,r);break;case 5:ld.location=o;step=6;await br(C[lang].nameAsk,1000,r);ei(C[lang].namePh,r);break}}
+async function hs(){const v=ti.value.trim();if(!v)return;ti.value='';const r=lang==='ar';const t=C[lang];ao(v,r);di();switch(step){case 6:ld.name=v;step=7;await br(t.phoneAsk(v),1200,r);ei(t.phonePh,r);break;case 7:ld.phone=v;step=8;await sendWebhook();const lb=t.labels;const sm=`📋 <b>${t.summaryTitle}</b><br><br><b>${lb.s}:</b> ${ld.service}<br><b>${lb.p}:</b> ${ld.projectType}<br><b>${lb.b}:</b> ${ld.budget}<br><b>${lb.t}:</b> ${ld.timeline}<br><b>${lb.l}:</b> ${ld.location}<br><b>${lb.n}:</b> ${ld.name}<br><b>${lb.ph}:</b> ${ld.phone}`;await br(sm,1500,r);showDone();break}}
+sb.addEventListener('click',hs);ti.addEventListener('keydown',e=>{if(e.key==='Enter')hs()});
+async function init(){addDiv();await new Promise(r=>setTimeout(r,400));addHero();await new Promise(r=>setTimeout(r,800));await br("Welcome to Raslan Building Contracting 🏗️<br><span style='font-family:Noto Sans Arabic;direction:rtl'>أهلاً بك في رسلان للمقاولات</span>",1000);await br("Choose your language / اختر لغتك",800);step=0;so(C.en.langOpts)}
+init();
+</script>
+</body>
+</html>
